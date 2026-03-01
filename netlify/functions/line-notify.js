@@ -2,39 +2,47 @@ const axios = require('axios');
 
 exports.handler = async (event) => {
     if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, body: 'Method Not Allowed' };
+        return { statusCode: 405, body: 'JSON.stringify({ error: "Method Not Allowed" })' };
     }
 
     try {
         const { name, phone, message } = JSON.parse(event.body);
-        const token = process.env.LINE_NOTIFY_TOKEN;
+        const accessToken = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+        const userId = process.env.USER_ID;
 
-        if (!token) {
-            return { statusCode: 500, body: 'Missing LINE_NOTIFY_TOKEN' };
+        if (!accessToken || !userId) {
+            return {
+                statusCode: 500,
+                body: JSON.stringify({ error: 'Missing LINE_CHANNEL_ACCESS_TOKEN or USER_ID in Netlify environment variables.' })
+            };
         }
 
-        const msg = `
-📣 มีลูกค้าใหม่ติดต่อจาก TeeNe.me!
+        const msgContent = `📣 มีลูกค้าใหม่ติดต่อจาก TeeNe.me!
 👤 ชื่อ: ${name}
 📞 เบอร์โทร: ${phone}
-📝 รายละเอียด: ${message}
-    `;
+📝 รายละเอียด: ${message}`;
 
-        await axios.post('https://notify-api.line.me/api/notify',
-            new URLSearchParams({ message: msg }).toString(),
-            {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': `Bearer ${token}`
+        await axios.post('https://api.line.me/v2/bot/message/push', {
+            to: userId,
+            messages: [
+                {
+                    type: 'text',
+                    text: msgContent
                 }
+            ]
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${accessToken}`
             }
-        );
+        });
 
         return {
             statusCode: 200,
             body: JSON.stringify({ status: 'success' })
         };
     } catch (error) {
+        console.error('LINE API Error:', error.response ? error.response.data : error.message);
         return {
             statusCode: 500,
             body: JSON.stringify({ error: error.message })
