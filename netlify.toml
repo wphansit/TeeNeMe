@@ -1,0 +1,5 @@
+[build]
+  publish = "."
+
+[processing]
+  hide_dot_html = true
