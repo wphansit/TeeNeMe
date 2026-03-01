@@ -2,114 +2,289 @@
 <html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>TeeNe.me | รับทำเว็บไซต์และดูแลการตลาดออนไลน์สำหรับธุรกิจท้องถิ่น</title>
-    <meta name="description"
-        content="ยกระดับธุรกิจของคุณด้วยเว็บไซต์ Landing Page และการตลาดออนไลน์ที่เน้นผลลัพธ์ เริ่มต้นเพียง 3,900 บาท โดย TeeNe.me">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap"
-        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00badb",
+                        secondary: "#1a237e",
+                        "primary-dark": "#009bb5",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0f172a",
+                        "surface-light": "#f4f4f5",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        display: ['Prompt', 'sans-serif'],
+                        sans: ['Prompt', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "12px",
+                        "xl": "16px",
+                        "2xl": "24px",
+                        "3xl": "32px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .container-custom {
+                @apply max-w-6xl mx-auto px-6;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary dark:from-white dark:to-primary;
+            }
+        }
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">TeeNe.<span>me</span></div>
-            <ul class="nav-links">
-                <li><a href="#services">บริการ</a></li>
-                <li><a href="#pricing">ราคา</a></li>
-                <li><a href="#contact" class="btn-primary">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero container">
-            <div class="hero-content">
-                <h1>ยกระดับธุรกิจท้องถิ่นให้ปัง<br>บนโลกออนไลน์กับ <span>TeeNe.me</span></h1>
-                <p>รับทำเว็บไซต์ Landing Page และดูแลการตลาดออนไลน์แบบครบวงจร เริ่มต้นเพียง 3,900.-</p>
-                <div class="hero-btns">
-                    <a href="#contact" class="btn-primary">ปรึกษาฟรี ทัก LINE</a>
-                    <a href="#services" class="btn-secondary">ดูบริการของเรา</a>
+<body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100 transition-colors duration-300">
+    <nav
+        class="sticky top-0 z-50 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="container-custom py-4 flex justify-between items-center">
+            <a class="text-2xl font-bold flex items-center gap-1 group" href="#">
+                <span class="text-secondary dark:text-white">TeeNe</span>
+                <span class="text-primary group-hover:rotate-12 transition-transform duration-300 block">.me</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+                    href="#services">บริการ</a>
+                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary font-medium transition-colors"
+                    href="#pricing">ราคา</a>
+                <a class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-medium transition-all shadow-lg shadow-primary/30"
+                    href="#contact">
+                    ติดต่อเรา
+                </a>
+                <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    onclick="document.documentElement.classList.toggle('dark')">
+                    <span class="material-icons-outlined text-gray-600 dark:text-gray-300 text-xl">brightness_4</span>
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="p-2 text-gray-600 dark:text-gray-300">
+                    <span class="material-icons-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="py-16 md:py-24 lg:py-32 overflow-hidden relative">
+        <div
+            class="absolute top-0 right-0 -z-10 w-1/3 h-1/3 bg-primary/10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div class="container-custom grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 animate-fade-in-up">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-secondary dark:text-white">
+                    ยกระดับธุรกิจท้องถิ่นให้ปัง <br />
+                    บนโลกออนไลน์กับ <br />
+                    <span class="text-primary">TeeNe.me</span>
+                </h1>
+                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-lg leading-relaxed">
+                    รับทำเว็บไซต์ Landing Page และดูแลการตลาดออนไลน์แบบครบวงจร เริ่มต้นเพียง 3,900.-
+                    ให้ธุรกิจของคุณเติบโตอย่างมั่นคง
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-semibold shadow-lg shadow-primary/30 transition-all hover:-translate-y-1 flex items-center gap-2"
+                        href="#contact">
+                        <span>ปรึกษาฟรี ทัก LINE</span>
+                    </a>
+                    <a class="border-2 border-primary text-primary hover:bg-primary hover:text-white dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white px-8 py-3 rounded-full font-semibold transition-all hover:-translate-y-1"
+                        href="#services">
+                        ดูบริการของเรา
+                    </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Image placeholder or generated asset -->
-            </div>
-        </section>
-
-        <section id="services" class="services container">
-            <h2 class="section-title">บริการของเรา</h2>
-            <div class="service-grid">
-                <div class="service-card">
-                    <div class="icon">🌐</div>
-                    <h3>Web Design</h3>
-                    <p>Landing Page โหลดไว รองรับมือถือ 100% ปิดการขายได้จริง</p>
+            <div class="hidden md:flex justify-center relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-primary/20 rounded-full blur-3xl transform scale-90">
                 </div>
-                <div class="service-card">
-                    <div class="icon">📍</div>
-                    <h3>Local SEO</h3>
-                    <p>ทำให้ร้านของคุณขึ้นอันดับต้นๆ เมื่อคนค้นหา "ใกล้ฉัน" ใน Google Maps</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">💬</div>
-                    <h3>LINE Automation</h3>
-                    <p>ระบบแจ้งเตือนออเดอร์เข้ากลุ่มหน้าส่วนตัว ไม่พลาดทุกการติดต่อ</p>
-                </div>
+                <img alt="Team working on digital marketing strategy"
+                    class="relative z-10 rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 object-cover w-full max-w-md h-auto aspect-square border-4 border-white dark:border-gray-800"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdp5wQ0jLxSTTWyqvcuQ0j1nEtwEETaTdo1FtKfpiHreL3-RtkjiOIIJnBsismuN85f2Q-zLYFOKR3oKw5xo_HRhgiCsnwRjFmkQHJbDhD_zPwdhhvFPgCe36el1vtMhjcM50UJxJVODKa3g29C4KyK11SRMCtENWkZD2_c78ObRagRFDl3dET-gBZaZqaP7mDNPHjXLZQ2jNiBLSGDnpdw77lnCkQSYddAQO2kd-st5nwM8PZLbbvBRFj6w3I7uNKgohEdbFJyyQ" />
             </div>
-        </section>
-
-        <section id="pricing" class="pricing container">
-            <h2 class="section-title">ราคาโปร่งใส คุ้มค่าที่สุด</h2>
-            <div class="pricing-card">
-                <h3>Standard Package</h3>
-                <div class="price">3,900<span>.-</span></div>
-                <p class="setup-fee">+ ค่าดูแลรายปี 2,500.- (รวมโดเมน .com)</p>
-                <ul>
-                    <li>✅ 1 Landing Page พรีเมียม</li>
-                    <li>✅ รองรับ Mobile Responsive</li>
-                    <li>✅ เชื่อมต่อ LINE Notify</li>
-                    <li>✅ ปรับแต่งเนื้อหา 2 ครั้งต่อปี</li>
-                    <li>✅ ฟรี SSL & Hosting (Netlify)</li>
-                </ul>
-                <a href="#contact" class="btn-primary">เริ่มสร้างเว็บของคุณ</a>
+        </div>
+    </section>
+    <section class="py-20 bg-white dark:bg-background-dark" id="services">
+        <div class="container-custom">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary dark:text-white">บริการของเรา</h2>
+                <div class="w-20 h-1.5 bg-primary mx-auto mt-4 rounded-full"></div>
             </div>
-        </section>
-
-        <section id="contact" class="contact container">
-            <div class="contact-form-container">
-                <h2>เริ่มปรึกษาโปรเจกต์ของคุณ</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">ชื่อร้าน / ชื่อของคุณ</label>
-                        <input type="text" id="name" name="name" required placeholder="เช่น ร้านกาแฟ TeeNe">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-transparent dark:border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto group-hover:scale-110 transition-transform">
+                        <span class="material-icons-outlined text-primary text-3xl">language</span>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">เบอร์โทรศัพท์</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="08x-xxx-xxxx">
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800 dark:text-white">Web Design</h3>
+                    <p class="text-center text-gray-500 dark:text-gray-400 leading-relaxed">
+                        Landing Page โหลดไว รองรับมือถือ 100% ออกแบบตามหลัก UX/UI ปิดการขายได้จริง เพิ่มความน่าเชื่อถือ
+                    </p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-transparent dark:border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto group-hover:scale-110 transition-transform">
+                        <span class="material-icons-outlined text-red-500 text-3xl">place</span>
                     </div>
-                    <div class="form-group">
-                        <label for="message">รายละเอียดที่ต้องการปรึกษา</label>
-                        <textarea id="message" name="message" rows="4"
-                            placeholder="บอกเรานิดนึงว่าคุณอยากทำอะไร..."></textarea>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800 dark:text-white">Local SEO</h3>
+                    <p class="text-center text-gray-500 dark:text-gray-400 leading-relaxed">
+                        ทำให้ร้านของคุณขึ้นอันดับต้นๆ เมื่อคนค้นหา "ใกล้ฉัน" ใน Google Maps
+                        เพิ่มโอกาสเรียกลูกค้าเข้าร้าน
+                    </p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-transparent dark:border-gray-700">
+                    <div
+                        class="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-6 shadow-sm mx-auto group-hover:scale-110 transition-transform">
+                        <span class="material-icons-outlined text-green-500 text-3xl">chat_bubble_outline</span>
                     </div>
-                    <button type="submit" class="btn-primary">ส่งข้อมูลให้เราติดต่อกลับ</button>
+                    <h3 class="text-xl font-bold text-center mb-4 text-gray-800 dark:text-white">LINE Automation</h3>
+                    <p class="text-center text-gray-500 dark:text-gray-400 leading-relaxed">
+                        ระบบแจ้งเตือนออเดอร์เข้ากลุ่มหน้าส่วนตัว ไม่พลาดทุกการติดต่อ จัดการง่าย ปิดการขายไว
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20" id="pricing">
+        <div class="container-custom">
+            <div class="bg-secondary dark:bg-[#111633] rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl -ml-16 -mb-16">
+                </div>
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-12">
+                    <div class="flex-1 text-center md:text-left">
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">ราคาโปร่งใส คุ้มค่าที่สุด</h2>
+                        <p class="text-blue-100 text-lg mb-8 max-w-md mx-auto md:mx-0">
+                            แพ็คเกจเดียวจบ ครบทุกสิ่งที่จำเป็นสำหรับการเริ่มต้นธุรกิจออนไลน์ ไม่มีการคิดค่าใช้จ่ายแฝง
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4 text-white/80 text-sm">
+                            <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                                <span class="material-icons-outlined text-yellow-400">verified</span>
+                                <span>รับประกันผลงาน</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                                <span class="material-icons-outlined text-yellow-400">headset_mic</span>
+                                <span>ดูแลหลังการขาย</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="w-full max-w-md bg-white dark:bg-surface-dark rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                        <div class="p-8 text-center border-b border-gray-100 dark:border-gray-700">
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-2">Standard Package</h3>
+                            <div class="flex justify-center items-baseline gap-1 my-4">
+                                <span class="text-5xl font-bold text-primary">3,900</span>
+                                <span class="text-xl text-gray-500 dark:text-gray-400">.-</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                                + ค่าดูแลรายปี 2,500.- (รวมโดเมน .com)
+                            </p>
+                        </div>
+                        <div class="p-8 bg-gray-50 dark:bg-gray-800/50">
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-icons-outlined text-green-500 flex-shrink-0">check_box</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm font-medium">1 Landing Page
+                                        พรีเมียม</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-icons-outlined text-green-500 flex-shrink-0">check_box</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm font-medium">รองรับ Mobile
+                                        Responsive</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-icons-outlined text-green-500 flex-shrink-0">check_box</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm font-medium">เชื่อมต่อ LINE
+                                        Notify</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-icons-outlined text-green-500 flex-shrink-0">check_box</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm font-medium">ปรับแต่งเนื้อหา 2
+                                        ครั้งต่อปี</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-icons-outlined text-green-500 flex-shrink-0">check_box</span>
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm font-medium">ฟรี SSL &amp;
+                                        Hosting (Netlify)</span>
+                                </li>
+                            </ul>
+                            <a class="block w-full bg-primary hover:bg-primary-dark text-white text-center py-3 rounded-full font-bold shadow-lg shadow-primary/20 transition-all"
+                                href="#contact">
+                                เริ่มสร้างเว็บของคุณ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-surface-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800"
+        id="contact">
+        <div class="container-custom">
+            <div
+                class="max-w-2xl mx-auto bg-white dark:bg-surface-dark rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100 dark:border-gray-700">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-2">
+                        เริ่มปรึกษาโปรเจกต์ของคุณ</h2>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">กรอกข้อมูลเพื่อให้เราติดต่อกลับโดยเร็วที่สุด</p>
+                </div>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 mb-2" for="name">ชื่อร้าน
+                            / ชื่อของคุณ</label>
+                        <input
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                            id="name" name="name" required placeholder="เช่น ร้านกาแฟ TeeNe" type="text" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 mb-2"
+                            for="phone">เบอร์โทรศัพท์</label>
+                        <input
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
+                            id="phone" name="phone" required placeholder="08x-xxx-xxxx" type="tel" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-200 mb-2"
+                            for="message">รายละเอียดที่ต้องการปรึกษา</label>
+                        <textarea
+                            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
+                            id="message" name="message" placeholder="บอกเรานิดนึงว่าคุณอยากทำอะไร..."
+                            rows="4"></textarea>
+                    </div>
+                    <button id="submit-btn"
+                        class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-primary/30 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                        type="submit">
+                        ส่งข้อมูลให้เราติดต่อกลับ
+                    </button>
                 </form>
-                <div id="form-status"></div>
+                <div id="form-status" class="mt-4 text-center"></div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 TeeNe.me - Local Business Digitization. All rights reserved.</p>
+        </div>
+    </section>
+    <footer class="bg-white dark:bg-background-dark py-8 border-t border-gray-100 dark:border-gray-800">
+        <div class="container-custom text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>© 2024 TeeNe.me - Local Business Digitization. All rights reserved.</p>
         </div>
     </footer>
-
     <script src="script.js"></script>
 </body>
 
