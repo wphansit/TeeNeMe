@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeeNe.me | รับทำเว็บไซต์และดูแลการตลาดออนไลน์สำหรับธุรกิจท้องถิ่น</title>
+    <meta name="description"
+        content="ยกระดับธุรกิจของคุณด้วยเว็บไซต์ Landing Page และการตลาดออนไลน์ที่เน้นผลลัพธ์ เริ่มต้นเพียง 3,900 บาท โดย TeeNe.me">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Thai:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">TeeNe.<span>me</span></div>
+            <ul class="nav-links">
+                <li><a href="#services">บริการ</a></li>
+                <li><a href="#pricing">ราคา</a></li>
+                <li><a href="#contact" class="btn-primary">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1>ยกระดับธุรกิจท้องถิ่นให้ปัง<br>บนโลกออนไลน์กับ <span>TeeNe.me</span></h1>
+                <p>รับทำเว็บไซต์ Landing Page และดูแลการตลาดออนไลน์แบบครบวงจร เริ่มต้นเพียง 3,900.-</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-primary">ปรึกษาฟรี ทัก LINE</a>
+                    <a href="#services" class="btn-secondary">ดูบริการของเรา</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Image placeholder or generated asset -->
+            </div>
+        </section>
+
+        <section id="services" class="services container">
+            <h2 class="section-title">บริการของเรา</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="icon">🌐</div>
+                    <h3>Web Design</h3>
+                    <p>Landing Page โหลดไว รองรับมือถือ 100% ปิดการขายได้จริง</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📍</div>
+                    <h3>Local SEO</h3>
+                    <p>ทำให้ร้านของคุณขึ้นอันดับต้นๆ เมื่อคนค้นหา "ใกล้ฉัน" ใน Google Maps</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💬</div>
+                    <h3>LINE Automation</h3>
+                    <p>ระบบแจ้งเตือนออเดอร์เข้ากลุ่มหน้าส่วนตัว ไม่พลาดทุกการติดต่อ</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing container">
+            <h2 class="section-title">ราคาโปร่งใส คุ้มค่าที่สุด</h2>
+            <div class="pricing-card">
+                <h3>Standard Package</h3>
+                <div class="price">3,900<span>.-</span></div>
+                <p class="setup-fee">+ ค่าดูแลรายปี 2,500.- (รวมโดเมน .com)</p>
+                <ul>
+                    <li>✅ 1 Landing Page พรีเมียม</li>
+                    <li>✅ รองรับ Mobile Responsive</li>
+                    <li>✅ เชื่อมต่อ LINE Notify</li>
+                    <li>✅ ปรับแต่งเนื้อหา 2 ครั้งต่อปี</li>
+                    <li>✅ ฟรี SSL & Hosting (Netlify)</li>
+                </ul>
+                <a href="#contact" class="btn-primary">เริ่มสร้างเว็บของคุณ</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact container">
+            <div class="contact-form-container">
+                <h2>เริ่มปรึกษาโปรเจกต์ของคุณ</h2>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">ชื่อร้าน / ชื่อของคุณ</label>
+                        <input type="text" id="name" name="name" required placeholder="เช่น ร้านกาแฟ TeeNe">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="08x-xxx-xxxx">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">รายละเอียดที่ต้องการปรึกษา</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="บอกเรานิดนึงว่าคุณอยากทำอะไร..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">ส่งข้อมูลให้เราติดต่อกลับ</button>
+                </form>
+                <div id="form-status"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TeeNe.me - Local Business Digitization. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
